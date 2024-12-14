@@ -19,8 +19,14 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, Optipro is running!");
+  res.send("Hello, Optipro is running very fast!");
 });
+
+import storeRouter from "../src/controllers/store.controller";
+app.use('/store', storeRouter);
+
+import orderRouter from "../src/controllers/orders.controller";
+app.use('/order', orderRouter);
 
 app.get("/file", (req: Request, res: Response) => {
   console.log("File route");
