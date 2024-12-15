@@ -28,10 +28,6 @@ app.use('/store', storeRouter);
 import orderRouter from "../src/controllers/orders.controller";
 app.use('/order', orderRouter);
 
-app.get("/file", (req: Request, res: Response) => {
-  console.log("File route");
-});
-
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
